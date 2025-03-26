@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5bb854aa8b5ffc4f89c54c5de741d9e, type: 3}
   m_Name: GameConfig
   m_EditorClassIdentifier: 
-  BallSpeed: 8
+  BallSpeed: 6
