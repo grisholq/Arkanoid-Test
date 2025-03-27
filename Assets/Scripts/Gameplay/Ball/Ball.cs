@@ -6,11 +6,12 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D _rigidbody;
+    [SerializeField] private int damage;
 
     public float SpeedMultiplyer { get; set; } = 1;
+    public int Damage => damage;
     private float Speed => gameConfig.BallSpeed;
-    
+
     [Inject] private GameConfig gameConfig;
     [Inject] private Rigidbody2D rigidbody;
 
@@ -26,12 +27,12 @@ public class Ball : MonoBehaviour
 
     public void SetMovementDirection(Vector2 direction)
     {
-        _rigidbody.velocity = direction * Speed * SpeedMultiplyer;
+        rigidbody.velocity = direction * Speed * SpeedMultiplyer;
     }
 
     public void RandomizeMovementDirection()
     {
-        Vector2 direction = _rigidbody.velocity;
+        Vector2 direction = rigidbody.velocity;
         direction += Random.insideUnitCircle * 0.1f;
         direction = direction.normalized;
         SetMovementDirection(direction);

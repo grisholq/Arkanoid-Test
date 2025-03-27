@@ -9,6 +9,7 @@ public class GameScope : LifetimeScope
     [SerializeField] private Ball ball;
     [SerializeField] private Paddle paddle;
     [SerializeField] private Camera camera;
+    [SerializeField] private FigureData _defaultFigure;
     
     protected override void Configure(IContainerBuilder builder)
     {
